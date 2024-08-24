@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B5B513D-64A1-4052-8AF5-902DC64537BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BYTEAZUL</RootNamespace>
+    <AssemblyName>BYTEAZUL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CsConexion.cs" />
+    <Compile Include="fmCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmCaja.Designer.cs">
+      <DependentUpon>fmCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmClientes.Designer.cs">
+      <DependentUpon>fmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmEmpleados.Designer.cs">
+      <DependentUpon>fmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMenu.Designer.cs">
+      <DependentUpon>fmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMovimientos.Designer.cs">
+      <DependentUpon>fmMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmProductos.Designer.cs">
+      <DependentUpon>fmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmProveedores.Designer.cs">
+      <DependentUpon>fmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmVentas.Designer.cs">
+      <DependentUpon>fmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmVerClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmVerClientes.Designer.cs">
+      <DependentUpon>fmVerClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmVerEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmVerEmpleados.Designer.cs">
+      <DependentUpon>fmVerEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmVerProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmVerProductos.Designer.cs">
+      <DependentUpon>fmVerProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmVerProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmVerProveedores.Designer.cs">
+      <DependentUpon>fmVerProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmCaja.resx">
+      <DependentUpon>fmCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmClientes.resx">
+      <DependentUpon>fmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmEmpleados.resx">
+      <DependentUpon>fmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmMenu.resx">
+      <DependentUpon>fmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmMovimientos.resx">
+      <DependentUpon>fmMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmProductos.resx">
+      <DependentUpon>fmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmProveedores.resx">
+      <DependentUpon>fmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmVentas.resx">
+      <DependentUpon>fmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmVerClientes.resx">
+      <DependentUpon>fmVerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmVerEmpleados.resx">
+      <DependentUpon>fmVerEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmVerProductos.resx">
+      <DependentUpon>fmVerProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmVerProveedores.resx">
+      <DependentUpon>fmVerProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO DE ACCESO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_MINIMIZAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BT_CERRAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_VER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_OCULTAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_Inicio_de_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO_MENU2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_CERRAR_SESION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_PRODUCTOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_PROVEEDORES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_MOVIMIENTOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_VENTAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_CAJA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_EMPLEADOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_CLIENTES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO_DE_PRODUCTOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_AGREGAR_PRODUCTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_MODIFICAR_PRODUCTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_VER_PRODUCTOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO_VER_PRODUCTOS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
