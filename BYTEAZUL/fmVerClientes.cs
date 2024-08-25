@@ -13,6 +13,7 @@ namespace BYTEAZUL
     public partial class fmVerClientes : Form
     {
         fmClientes Clientes;
+        CsConexion conexion;
         public fmVerClientes()
         {
             InitializeComponent();
@@ -152,6 +153,64 @@ namespace BYTEAZUL
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
         {
             lblCerrarSesion.Visible = false;
+        }
+
+        private void fmVerClientes_Load(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            string consulta = "Select id_clientes AS [ID Cliente], cl_cedula AS Cédula, cl_nombre AS Nombres, cl_apellido AS Apellidos, cl_Celular AS Celular, cl_Email AS Email, cl_Direccion AS Dirección from Clientes";
+            DataSet ds = conexion.Insertinto(consulta);
+
+            dgvVerProductos.DataSource = ds.Tables["dsretorna"];
+
+            dgvVerProductos.ReadOnly = true;
+            dgvVerProductos.AllowUserToAddRows = false;
+            dgvVerProductos.RowHeadersVisible = false;
+
+            dgvVerProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVerProductos.MultiSelect = false;
+        }
+
+        private void btnAgregarClientes_Click(object sender, EventArgs e)
+        {
+            fmClientes clientes = new fmClientes();
+            this.Hide();
+            clientes.Show();
+        }
+
+        private void btnModificarClientes_Click(object sender, EventArgs e)
+        {
+            if (dgvVerProductos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvVerProductos.SelectedRows[0];
+
+                string nombre = filaSeleccionada.Cells["Nombres"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["Apellidos"].Value.ToString();
+                string cedula = filaSeleccionada.Cells["Cédula"].Value.ToString();
+                string correo = filaSeleccionada.Cells["Email"].Value.ToString();
+                string direccion = filaSeleccionada.Cells["Dirección"].Value.ToString();
+                string celular = filaSeleccionada.Cells["Celular"].Value.ToString();
+
+                fmClientes cliente = new fmClientes(nombre, apellido, cedula, correo, direccion, celular);
+                this.Hide();
+                cliente.Show();
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna fila seleccionada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                conexion = new CsConexion();
+                string comand = "select id_clientes as [ID Clientes] , cl_cedula as Cedula, cl_nombre as Nombre, cl_apellido as Apellido, cl_celular as Celular, cl_email as Email, cl_direccion as Dirección from Clientes where id_clientes like '%" + txtBuscar.Text + "%' or cl_cedula like '%" + txtBuscar.Text + "%' or cl_apellido like '%" + txtBuscar.Text + "%' or cl_celular like '%" + txtBuscar.Text + "%' or cl_email like '%" + txtBuscar.Text + "%' or cl_direccion like '%" + txtBuscar.Text + "%'";
+                DataSet ds = conexion.Insertinto(comand);
+
+                dgvVerProductos.DataSource = ds.Tables["dsretorna"];
+            }
         }
     }
 }
