@@ -12,6 +12,7 @@ namespace BYTEAZUL
 {
     public partial class fmMovimientos : Form
     {
+        CsConexion conexion;
         public fmMovimientos()
         {
             InitializeComponent();
@@ -151,6 +152,48 @@ namespace BYTEAZUL
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
         {
             lblCerrarSesion.Visible = false;
+        }
+
+        private void dgvMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+
+
+
+
+        }
+
+        private void fmMovimientos_Load(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            //Insertinto
+            DataSet ds = conexion.Insertinto("Select id_empleado as [ID Empleado], mov_accion as [Acción Realizada], mov_hora as Hora, mov_fecha as Fecha from Movimientos");
+            dgvMovimientos.DataSource = ds.Tables["dsretorna"];
+            dgvMovimientos.ReadOnly = true;
+            dgvMovimientos.AllowUserToAddRows = false;
+            dgvMovimientos.RowHeadersVisible = false;
+
+            // Ajustar las columnas para que se llenen el ancho del DataGridView
+            dgvMovimientos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            if(!string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                DataSet ds = conexion.Insertinto("Select id_empleado as [ID Empleado], mov_accion as [Acción Realizada], mov_hora as Hora, mov_fecha as Fecha from Movimientos where id_empleado like '%" + txtBuscar.Text + "%' or mov_accion like '%" + txtBuscar.Text + "%' or  mov_hora like '%" + txtBuscar.Text + "%' or mov_fecha like '%" + txtBuscar.Text + "%'");
+
+                dgvMovimientos.DataSource = ds.Tables["dsretorna"];
+                dgvMovimientos.ReadOnly = true;
+                dgvMovimientos.AllowUserToAddRows = false;
+                dgvMovimientos.RowHeadersVisible = false;
+                // Ajustar las columnas para que se llenen el ancho del DataGridView
+                dgvMovimientos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            
         }
     }
 }
