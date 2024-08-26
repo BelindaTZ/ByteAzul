@@ -68,6 +68,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(24, 24);
             this.btnBuscar.TabIndex = 102;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblCerrarSesion
             // 
@@ -77,7 +78,7 @@
             this.lblCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.lblCerrarSesion.Location = new System.Drawing.Point(42, 523);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(98, 16);
+            this.lblCerrarSesion.Size = new System.Drawing.Size(97, 16);
             this.lblCerrarSesion.TabIndex = 116;
             this.lblCerrarSesion.Text = "CERRAR SESION";
             this.lblCerrarSesion.Visible = false;
@@ -410,6 +411,7 @@
             this.Name = "fmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmVentas";
+            this.Load += new System.EventHandler(this.fmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
