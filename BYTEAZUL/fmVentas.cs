@@ -12,6 +12,7 @@ namespace BYTEAZUL
 {
     public partial class fmVentas : Form
     {
+        CsConexion conexion;
         public fmVentas()
         {
             InitializeComponent();
@@ -151,6 +152,31 @@ namespace BYTEAZUL
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
         {
             lblCerrarSesion.Visible = false;
+        }
+
+        private void fmVentas_Load(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            conexion.abrirconexion();
+            string cadena = "Select id_ventas As ID, vt_Fecha_de_venta As [Fecha de venta], id_clientes As Clientes, id_empleado As Empleado, vt_total As Total from Ventas";
+            DataSet ds = conexion.Insertinto(cadena);
+            dgvVentas.DataSource = ds.Tables["dsretorna"];
+            conexion.cerrarconexion();
+            for (int i = 0; i < dgvVentas.Columns.Count; i++)
+            {
+                dgvVentas.Columns[i].Width = dgvVentas.Width / dgvVentas.Columns.Count - 1;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            conexion.abrirconexion();
+            string cadena = "Select id_ventas As ID, vt_Fecha_de_venta As [Fecha de venta], id_clientes As Clientes, id_empleado As Empleado, vt_total As Total from Ventas where id_ventas = '" + txtBuscar.Text +
+                "' or vt_Fecha_de_venta = '" + txtBuscar.Text + "' or id_clientes = '" + txtBuscar.Text + "' or id_empleado = '" + txtBuscar.Text + "' or vt_total = '" + txtBuscar.Text + "'";
+            DataSet ds = conexion.Insertinto(cadena);
+            dgvVentas.DataSource = ds.Tables["dsretorna"];
+            conexion.cerrarconexion();
         }
     }
 }
