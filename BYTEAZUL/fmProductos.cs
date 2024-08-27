@@ -13,11 +13,39 @@ namespace BYTEAZUL
     public partial class fmProductos : Form
     {
         fmVerProductos VerProductos;
+        fmVerProveedores VerProveedores;
+        string sentencia;
+        CsConexion conexion;
+        static Random rnd = new Random(DateTime.Now.Millisecond);
         public fmProductos()
         {
             InitializeComponent();
         }
-
+        public fmProductos(string id_producto, string pr_producto, string pr_rubro, string id_proveedor, string pr_descripcion, string pr_cantidad, string pr_precio_unidad)
+        {
+            InitializeComponent();
+            btnAgregarProducto.Enabled = false;
+            btnModificarProducto.Enabled = true;
+            txtProductos.Text = pr_producto;
+            txtProductos.Enabled = false;
+            txtDescripcion.Text = pr_descripcion;
+            txt_Idproducto.Text = id_producto;
+            txtRubros.Text = pr_rubro;
+            txtCantidad.Text = pr_cantidad;
+            txtIdProveedor.Text = id_proveedor;
+            btnBuscar.Enabled = false;
+            txtPrecios.Text = pr_precio_unidad;
+        }
+        public fmProductos(string pr_producto, string pr_rubro, string id_proveedor, string pr_descripcion, string pr_cantidad, string pr_precio_unidad)
+        {
+            InitializeComponent();
+            txtProductos.Text = pr_producto;
+            txtDescripcion.Text = pr_descripcion;
+            txtRubros.Text = pr_rubro;
+            txtCantidad.Text = pr_cantidad;
+            txtIdProveedor.Text = id_proveedor;
+            txtPrecios.Text = pr_precio_unidad;
+        }
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             fmProveedores Proveedores = new fmProveedores();
@@ -101,7 +129,20 @@ namespace BYTEAZUL
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            
+            if (txtDescripcion.Text == "" || txtRubros.Text == "" || txtCantidad.Text == "" || txtPrecios.Text == "")
+                MessageBox.Show("Algunos campos están vacíos");
+            else if (double.Parse(txtPrecios.Text) <= 0 || int.Parse(txtCantidad.Text) <= 0)
+                MessageBox.Show("Los valores deben ser mayor 0");
+            else
+            {
+                sentencia = "Update Productos set pr_rubro = '" + txtRubros.Text + "', pr_descripcion = '" + txtDescripcion.Text + "', pr_cantidad = '" + txtCantidad.Text + "', pr_precio_unidad = '" + txtPrecios.Text + "' where id_producto = '" + txt_Idproducto.Text + "'";
+                conexion = new CsConexion();
+                conexion.Ingresar_Modificar(sentencia);
+                MessageBox.Show("Producto Modificado Exitosamente :D");
+                this.Hide();
+                VerProductos = new fmVerProductos();
+                VerProductos.ShowDialog();
+            }
         }
 
         private void btnVerProductos_Click(object sender, EventArgs e)
@@ -121,6 +162,52 @@ namespace BYTEAZUL
         private void fmProductos_Leave(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPrecios_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar == 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            VerProveedores = new fmVerProveedores(1, txtProductos.Text, txtRubros.Text, txtIdProveedor.Text, txtDescripcion.Text, txtCantidad.Text, txtPrecios.Text);
+            this.Hide();
+            VerProveedores.ShowDialog();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            if (txtProductos.Text == "" || txtIdProveedor.Text == "" || txtDescripcion.Text == "" || txtRubros.Text == "" || txtCantidad.Text == "" || txtPrecios.Text == "")
+                MessageBox.Show("Algunos campos están vacíos");
+            else if (double.Parse(txtPrecios.Text) <= 0 || int.Parse(txtCantidad.Text) <= 0)
+                MessageBox.Show("Los valores deben ser mayor 0");
+            else
+            {
+                string idProdu = (txtProductos.Text.Substring(0, 3) + rnd.Next(100, 1000)).ToUpper();
+                txt_Idproducto.Text = idProdu;
+                sentencia = "Insert into Productos (id_producto, pr_producto, pr_rubro, id_proveedor, pr_descripcion, pr_cantidad, pr_precio_unidad)" +
+                    " Values ('" + idProdu + "', '" + txtProductos.Text + "', '" + txtRubros.Text + "', '" + txtIdProveedor.Text + "', '" + txtDescripcion.Text + "', '" + txtCantidad.Text + "', '" + txtPrecios.Text + "')";
+                conexion = new CsConexion();
+                conexion.Ingresar_Modificar(sentencia);
+                MessageBox.Show("Producto Ingresado Exitosamente :D");
+                this.Hide();
+                VerProductos = new fmVerProductos();
+                VerProductos.ShowDialog();
+            }
         }
     }
 }

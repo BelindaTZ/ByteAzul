@@ -52,7 +52,7 @@
             this.txtServicios = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtProductos = new System.Windows.Forms.TextBox();
+            this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -62,9 +62,10 @@
             this.lblCerrarSesion.BackColor = System.Drawing.Color.Transparent;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(42, 522);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(56, 642);
+            this.lblCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(98, 16);
+            this.lblCerrarSesion.Size = new System.Drawing.Size(123, 19);
             this.lblCerrarSesion.TabIndex = 67;
             this.lblCerrarSesion.Text = "CERRAR SESION";
             this.lblCerrarSesion.Visible = false;
@@ -75,9 +76,10 @@
             this.lblClientes.BackColor = System.Drawing.Color.Transparent;
             this.lblClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientes.ForeColor = System.Drawing.Color.Black;
-            this.lblClientes.Location = new System.Drawing.Point(46, 451);
+            this.lblClientes.Location = new System.Drawing.Point(61, 555);
+            this.lblClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(66, 17);
+            this.lblClientes.Size = new System.Drawing.Size(81, 19);
             this.lblClientes.TabIndex = 66;
             this.lblClientes.Text = "CLIENTES";
             this.lblClientes.Visible = false;
@@ -88,9 +90,10 @@
             this.lblEmpleados.BackColor = System.Drawing.Color.Transparent;
             this.lblEmpleados.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleados.ForeColor = System.Drawing.Color.Black;
-            this.lblEmpleados.Location = new System.Drawing.Point(47, 400);
+            this.lblEmpleados.Location = new System.Drawing.Point(63, 492);
+            this.lblEmpleados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpleados.Name = "lblEmpleados";
-            this.lblEmpleados.Size = new System.Drawing.Size(85, 17);
+            this.lblEmpleados.Size = new System.Drawing.Size(104, 19);
             this.lblEmpleados.TabIndex = 65;
             this.lblEmpleados.Text = "EMPLEADOS";
             this.lblEmpleados.Visible = false;
@@ -101,9 +104,10 @@
             this.lblCaja.BackColor = System.Drawing.Color.Transparent;
             this.lblCaja.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaja.ForeColor = System.Drawing.Color.Black;
-            this.lblCaja.Location = new System.Drawing.Point(46, 343);
+            this.lblCaja.Location = new System.Drawing.Point(61, 422);
+            this.lblCaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaja.Name = "lblCaja";
-            this.lblCaja.Size = new System.Drawing.Size(40, 17);
+            this.lblCaja.Size = new System.Drawing.Size(48, 19);
             this.lblCaja.TabIndex = 64;
             this.lblCaja.Text = "CAJA";
             this.lblCaja.Visible = false;
@@ -114,9 +118,10 @@
             this.lblVentas.BackColor = System.Drawing.Color.Transparent;
             this.lblVentas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVentas.ForeColor = System.Drawing.Color.Black;
-            this.lblVentas.Location = new System.Drawing.Point(45, 284);
+            this.lblVentas.Location = new System.Drawing.Point(60, 350);
+            this.lblVentas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(58, 17);
+            this.lblVentas.Size = new System.Drawing.Size(71, 19);
             this.lblVentas.TabIndex = 63;
             this.lblVentas.Text = "VENTAS";
             this.lblVentas.Visible = false;
@@ -127,9 +132,10 @@
             this.lblMovimientos.BackColor = System.Drawing.Color.Transparent;
             this.lblMovimientos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovimientos.ForeColor = System.Drawing.Color.Black;
-            this.lblMovimientos.Location = new System.Drawing.Point(46, 229);
+            this.lblMovimientos.Location = new System.Drawing.Point(61, 282);
+            this.lblMovimientos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMovimientos.Name = "lblMovimientos";
-            this.lblMovimientos.Size = new System.Drawing.Size(101, 17);
+            this.lblMovimientos.Size = new System.Drawing.Size(124, 19);
             this.lblMovimientos.TabIndex = 62;
             this.lblMovimientos.Text = "MOVIMIENTOS";
             this.lblMovimientos.Visible = false;
@@ -141,9 +147,10 @@
             this.lblProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductos.ForeColor = System.Drawing.Color.Black;
-            this.lblProductos.Location = new System.Drawing.Point(46, 167);
+            this.lblProductos.Location = new System.Drawing.Point(61, 206);
+            this.lblProductos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(86, 17);
+            this.lblProductos.Size = new System.Drawing.Size(105, 19);
             this.lblProductos.TabIndex = 61;
             this.lblProductos.Text = "PRODUCTOS";
             this.lblProductos.Visible = false;
@@ -160,9 +167,10 @@
             this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(6, 514);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(8, 633);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(40, 37);
             this.btnCerrarSesion.TabIndex = 60;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
@@ -180,9 +188,10 @@
             this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnClientes.Location = new System.Drawing.Point(13, 437);
+            this.btnClientes.Location = new System.Drawing.Point(17, 538);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(32, 36);
+            this.btnClientes.Size = new System.Drawing.Size(43, 44);
             this.btnClientes.TabIndex = 59;
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -200,9 +209,10 @@
             this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnEmpleados.Location = new System.Drawing.Point(12, 390);
+            this.btnEmpleados.Location = new System.Drawing.Point(16, 480);
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(32, 36);
+            this.btnEmpleados.Size = new System.Drawing.Size(43, 44);
             this.btnEmpleados.TabIndex = 58;
             this.btnEmpleados.UseVisualStyleBackColor = false;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
@@ -220,9 +230,10 @@
             this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnCaja.Location = new System.Drawing.Point(12, 333);
+            this.btnCaja.Location = new System.Drawing.Point(16, 410);
+            this.btnCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(32, 36);
+            this.btnCaja.Size = new System.Drawing.Size(43, 44);
             this.btnCaja.TabIndex = 57;
             this.btnCaja.UseVisualStyleBackColor = false;
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
@@ -240,9 +251,10 @@
             this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnVentas.Location = new System.Drawing.Point(12, 274);
+            this.btnVentas.Location = new System.Drawing.Point(16, 337);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(32, 36);
+            this.btnVentas.Size = new System.Drawing.Size(43, 44);
             this.btnVentas.TabIndex = 56;
             this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
@@ -260,9 +272,10 @@
             this.btnMovimientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovimientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnMovimientos.Location = new System.Drawing.Point(12, 219);
+            this.btnMovimientos.Location = new System.Drawing.Point(16, 270);
+            this.btnMovimientos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMovimientos.Name = "btnMovimientos";
-            this.btnMovimientos.Size = new System.Drawing.Size(32, 36);
+            this.btnMovimientos.Size = new System.Drawing.Size(43, 44);
             this.btnMovimientos.TabIndex = 55;
             this.btnMovimientos.UseVisualStyleBackColor = false;
             this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
@@ -280,9 +293,10 @@
             this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnProductos.Location = new System.Drawing.Point(12, 157);
+            this.btnProductos.Location = new System.Drawing.Point(16, 193);
+            this.btnProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(32, 32);
+            this.btnProductos.Size = new System.Drawing.Size(43, 39);
             this.btnProductos.TabIndex = 54;
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
@@ -300,9 +314,10 @@
             this.btnVerProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.btnVerProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
-            this.btnVerProveedor.Location = new System.Drawing.Point(699, 409);
+            this.btnVerProveedor.Location = new System.Drawing.Point(932, 503);
+            this.btnVerProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerProveedor.Name = "btnVerProveedor";
-            this.btnVerProveedor.Size = new System.Drawing.Size(269, 58);
+            this.btnVerProveedor.Size = new System.Drawing.Size(359, 71);
             this.btnVerProveedor.TabIndex = 70;
             this.btnVerProveedor.UseVisualStyleBackColor = false;
             this.btnVerProveedor.Click += new System.EventHandler(this.btnVerProveedor_Click);
@@ -313,16 +328,19 @@
             this.btnModificarProveedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificarProveedor.BackgroundImage")));
             this.btnModificarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModificarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarProveedor.Enabled = false;
             this.btnModificarProveedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.btnModificarProveedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.btnModificarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.btnModificarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
-            this.btnModificarProveedor.Location = new System.Drawing.Point(415, 409);
+            this.btnModificarProveedor.Location = new System.Drawing.Point(553, 503);
+            this.btnModificarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarProveedor.Name = "btnModificarProveedor";
-            this.btnModificarProveedor.Size = new System.Drawing.Size(269, 58);
+            this.btnModificarProveedor.Size = new System.Drawing.Size(359, 71);
             this.btnModificarProveedor.TabIndex = 69;
             this.btnModificarProveedor.UseVisualStyleBackColor = false;
+            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
             // 
             // btnAgregarProveedor
             // 
@@ -335,11 +353,13 @@
             this.btnAgregarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.btnAgregarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(128, 409);
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(171, 503);
+            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
-            this.btnAgregarProveedor.Size = new System.Drawing.Size(269, 58);
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(359, 71);
             this.btnAgregarProveedor.TabIndex = 68;
             this.btnAgregarProveedor.UseVisualStyleBackColor = false;
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
             // btnSalir
             // 
@@ -352,9 +372,10 @@
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(943, 1);
+            this.btnSalir.Location = new System.Drawing.Point(1257, 1);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(29, 20);
+            this.btnSalir.Size = new System.Drawing.Size(39, 25);
             this.btnSalir.TabIndex = 90;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -370,9 +391,10 @@
             this.btnMimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnMimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnMimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMimizar.Location = new System.Drawing.Point(910, 1);
+            this.btnMimizar.Location = new System.Drawing.Point(1213, 1);
+            this.btnMimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMimizar.Name = "btnMimizar";
-            this.btnMimizar.Size = new System.Drawing.Size(29, 20);
+            this.btnMimizar.Size = new System.Drawing.Size(39, 25);
             this.btnMimizar.TabIndex = 89;
             this.btnMimizar.UseVisualStyleBackColor = false;
             this.btnMimizar.Click += new System.EventHandler(this.btnMimizar_Click);
@@ -382,10 +404,11 @@
             this.txtCelular.BackColor = System.Drawing.Color.White;
             this.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCelular.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelular.Location = new System.Drawing.Point(404, 185);
+            this.txtCelular.Location = new System.Drawing.Point(539, 228);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCelular.MaxLength = 10;
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(219, 16);
+            this.txtCelular.Size = new System.Drawing.Size(292, 20);
             this.txtCelular.TabIndex = 92;
             // 
             // txtServicios
@@ -393,10 +416,11 @@
             this.txtServicios.BackColor = System.Drawing.Color.White;
             this.txtServicios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtServicios.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServicios.Location = new System.Drawing.Point(678, 184);
+            this.txtServicios.Location = new System.Drawing.Point(904, 226);
+            this.txtServicios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtServicios.MaxLength = 50;
             this.txtServicios.Name = "txtServicios";
-            this.txtServicios.Size = new System.Drawing.Size(217, 16);
+            this.txtServicios.Size = new System.Drawing.Size(289, 20);
             this.txtServicios.TabIndex = 93;
             // 
             // txtEmail
@@ -404,9 +428,10 @@
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(567, 281);
+            this.txtEmail.Location = new System.Drawing.Point(756, 346);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(217, 16);
+            this.txtEmail.Size = new System.Drawing.Size(289, 20);
             this.txtEmail.TabIndex = 94;
             // 
             // txtDireccion
@@ -414,21 +439,23 @@
             this.txtDireccion.BackColor = System.Drawing.Color.White;
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(218, 280);
+            this.txtDireccion.Location = new System.Drawing.Point(291, 345);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(217, 16);
+            this.txtDireccion.Size = new System.Drawing.Size(289, 20);
             this.txtDireccion.TabIndex = 95;
             // 
-            // txtProductos
+            // txtNombreProveedor
             // 
-            this.txtProductos.BackColor = System.Drawing.Color.White;
-            this.txtProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductos.Location = new System.Drawing.Point(121, 184);
-            this.txtProductos.MaxLength = 30;
-            this.txtProductos.Name = "txtProductos";
-            this.txtProductos.Size = new System.Drawing.Size(219, 16);
-            this.txtProductos.TabIndex = 96;
+            this.txtNombreProveedor.BackColor = System.Drawing.Color.White;
+            this.txtNombreProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreProveedor.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreProveedor.Location = new System.Drawing.Point(161, 226);
+            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreProveedor.MaxLength = 30;
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(292, 20);
+            this.txtNombreProveedor.TabIndex = 96;
             // 
             // btnRegresar
             // 
@@ -442,22 +469,24 @@
             this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(176)))), ((int)(((byte)(211)))));
-            this.btnRegresar.Location = new System.Drawing.Point(17, 1);
+            this.btnRegresar.Location = new System.Drawing.Point(23, 1);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(19, 20);
+            this.btnRegresar.Size = new System.Drawing.Size(25, 25);
             this.btnRegresar.TabIndex = 97;
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // fmProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(127)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(980, 550);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1307, 677);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.txtProductos);
+            this.Controls.Add(this.txtNombreProveedor);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtServicios);
@@ -481,8 +510,10 @@
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnMovimientos);
             this.Controls.Add(this.btnProductos);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmProveedores";
@@ -516,7 +547,7 @@
         private System.Windows.Forms.TextBox txtServicios;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtProductos;
+        private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.Button btnRegresar;
     }
 }

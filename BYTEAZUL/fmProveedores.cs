@@ -16,7 +16,25 @@ namespace BYTEAZUL
         {
             InitializeComponent();
         }
+        string id_Proveedor;
+        public fmProveedores(string prv_idProveedor, string prv_nombre, string prv_celular, string prv_servicios, string prv_direccion, string prv_email)
+        {
+            InitializeComponent();
+            id_Proveedor = prv_idProveedor;
+            txtNombreProveedor.Text = prv_nombre;
+            txtCelular.Text = prv_celular;
+            txtServicios.Text = prv_servicios;
+            txtDireccion.Text = prv_direccion;
+            txtEmail.Text = prv_email;
+            btnAgregarProveedor.Enabled = false;
+            txtNombreProveedor.Enabled = false;
+            txtServicios.Enabled = false;
+            btnModificarProveedor.Enabled = true;
+        }
+
         fmVerProveedores Proveedores;
+        string sentencia;
+        CsConexion conexion;
         private void btnProductos_Click(object sender, EventArgs e)
         {
             fmProductos Productos = new fmProductos();
@@ -158,6 +176,40 @@ namespace BYTEAZUL
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
         {
             lblCerrarSesion.Visible = false;
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            if (txtNombreProveedor.Text == "" || txtCelular.Text == "" || txtDireccion.Text == "" || txtEmail.Text == "" || txtServicios.Text == "")
+                MessageBox.Show("Algunos campos están vacíos");
+            else
+            {
+                sentencia = "Insert into Proveedores (prv_nombre, prv_celular, prv_servicios, prv_direccion, prv_email) " +
+                    "Values ('" + txtNombreProveedor.Text + "', '" + txtCelular.Text + "', '" + txtServicios.Text + "', '" + txtDireccion.Text + "', '" + txtEmail.Text + "')";
+                conexion = new CsConexion();
+                conexion.Ingresar_Modificar(sentencia);
+                MessageBox.Show("Proveedor Agregado Exitosamente :D");
+                this.Hide();
+                Proveedores = new fmVerProveedores();
+                Proveedores.ShowDialog();
+
+            }
+        }
+
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            if (txtDireccion.Text == "" || txtCelular.Text == "" || txtEmail.Text == "")
+                MessageBox.Show("Algunos campos están vacíos");
+            else
+            {
+                sentencia = "Update Proveedores set prv_direccion = '" + txtDireccion.Text + "', prv_celular = '" + txtCelular.Text + "', prv_email = '" + txtEmail.Text + "' where id_proveedor = '" + id_Proveedor + "'";
+                conexion = new CsConexion();
+                conexion.Ingresar_Modificar(sentencia);
+                MessageBox.Show("Proveedor Modificado Exitosamente :D");
+                this.Hide();
+                Proveedores = new fmVerProveedores();
+                Proveedores.ShowDialog();
+            }
         }
     }
 }

@@ -13,6 +13,9 @@ namespace BYTEAZUL
     public partial class fmVerProductos : Form
     {
         fmProductos Productos;
+        CsConexion conexion;
+        string sentencia;
+        string id_producto, pr_producto, pr_rubro, id_proveedor, pr_descripcion, pr_cantidad, pr_precio_unidad;
         public fmVerProductos()
         {
             InitializeComponent();     
@@ -152,6 +155,89 @@ namespace BYTEAZUL
         private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
         {
             lblCerrarSesion.Visible = false;
-        }     
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            Productos = new fmProductos();
+            this.Hide();
+            Productos.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int x = 0;
+                conexion = new CsConexion();
+                if (txtBuscar.Text == "")
+                {
+                    sentencia = "Select * from Productos";
+                    DataSet verProductosB = conexion.Insertinto(sentencia);
+                    dgvVerProductos.DataSource = verProductosB.Tables[0];
+                }
+                else
+                {
+                    sentencia = "Select * from Productos where id_proveedor like '%" + txtBuscar.Text + "%' Or pr_cantidad like '%" + txtBuscar.Text + "%'";
+                    DataSet verProductos = conexion.Insertinto(sentencia);
+                    if (verProductos.Tables[0].Rows.Count == 0)
+                    {
+                        sentencia = "Select * from Productos where id_producto like '%" + txtBuscar.Text + "%' Or pr_producto like '%" + txtBuscar.Text + "%' Or pr_rubro like '%" + txtBuscar.Text + "%' Or pr_descripcion  like '%" + txtBuscar.Text + "%'";
+                        verProductos = conexion.Insertinto(sentencia);
+                        if (verProductos.Tables[0].Rows.Count == 0)
+                        {
+                            string busca = txtBuscar.Text;
+                            if (busca.Contains(','))
+                                busca = busca.Replace(',', '.');
+                            sentencia = "Select * from Productos where pr_precio_unidad like '%" + busca + "%'";
+                            verProductos = conexion.Insertinto(sentencia);
+                        }
+                    }
+                    dgvVerProductos.DataSource = verProductos.Tables[0];
+                }
+                x = dgvVerProductos.Columns.Count;
+                for (int i = 0; i < x; i++)
+                    dgvVerProductos.Columns[i].Width = dgvVerProductos.Width / x - 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fmVerProductos_Load(object sender, EventArgs e)
+        {
+            conexion = new CsConexion();
+            DataSet verProducts = conexion.Insertinto("Select * from Productos");
+            dgvVerProductos.DataSource = verProducts.Tables[0];
+            int x = dgvVerProductos.ColumnCount;
+            for (int i = 0; i < x; i++)
+                dgvVerProductos.Columns[i].Width = dgvVerProductos.Width / x - 1;
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvVerProductos.SelectedRows.Count == 1)
+                {
+                    int fila = dgvVerProductos.CurrentCell.RowIndex;
+                    id_producto = dgvVerProductos.Rows[fila].Cells[0].Value.ToString();
+                    pr_producto = dgvVerProductos.Rows[fila].Cells[1].Value.ToString();
+                    pr_rubro = dgvVerProductos.Rows[fila].Cells[2].Value.ToString();
+                    id_proveedor = dgvVerProductos.Rows[fila].Cells[3].Value.ToString();
+                    pr_descripcion = dgvVerProductos.Rows[fila].Cells[4].Value.ToString();
+                    pr_cantidad = dgvVerProductos.Rows[fila].Cells[5].Value.ToString();
+                    pr_precio_unidad = dgvVerProductos.Rows[fila].Cells[6].Value.ToString();
+                    fmProductos modifiproducts = new fmProductos(id_producto, pr_producto, pr_rubro, id_proveedor, pr_descripcion, pr_cantidad, pr_precio_unidad);
+                    this.Hide();
+                    modifiproducts.ShowDialog();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

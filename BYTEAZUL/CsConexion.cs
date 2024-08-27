@@ -24,7 +24,7 @@ namespace BYTEAZUL
         public CsConexion() 
         {
             serve = @"(localdb)\.";
-            database = "Byte Azul";
+            database = "ByteAzul";
             usuario = "Byteazul";
             pasword = "12345";
         }
@@ -68,7 +68,7 @@ namespace BYTEAZUL
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 if (conectar != null && conectar.State == ConnectionState.Open)
                     cerrarconexion();
             }
